@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft. All rights reserved.
+
 #include "KeyboardLightController.h"
 
 KeyboardLightController::KeyboardLightController(

@@ -1,7 +1,5 @@
 
 /*
-Copyright (c) Microsoft. All rights reserved.
-
 KeyboardLightController Static Library
 
 This library will control keyboard lighting
