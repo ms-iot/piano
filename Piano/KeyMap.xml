@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mappings>
+  <note key="2" command="_PlaySongFile"/>
+  
+  <!-- C0=0 , C1=12, C2=24, C3=36 ... C10=120 -->
+  <note key="p" note="48" light="14" channel="1"/> <!--C3-->
+  <note key="[" note="50" light="13" channel="1"/> <!--D3-->
+  <note key="'" note="52" light="12" channel="1"/> <!--E3-->
+  <note key="/" note="53" light="11" channel="1"/> <!--F3-->
+  <note key="-" note="55" light="10" channel="1"/> <!--G3-->
+  <note key="0" note="57" light="9" channel="1"/>  <!--A3-->
+  <note key="*" note="59" light="8" channel="1"/>  <!--B3-->
+  <note key="c" note="60" light="7" channel="1"/>  <!--C4-->
+  <note key="3" note="62" light="6" channel="1"/>  <!--D4-->
+  <note key="b" note="64" light="5" channel="1"/>  <!--E4-->
+  <note key="5" note="65" light="4" channel="1"/>  <!--F4-->
+  <note key="u" note="67" light="3" channel="1"/>  <!--G4-->
+  <note key="j" note="69" light="2" channel="1"/>  <!--A4-->
+  <note key="7" note="71" light="1" channel="1"/>  <!--B4-->
+
+</mappings>
