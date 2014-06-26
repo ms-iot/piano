@@ -15,17 +15,22 @@
 - spi_missing.h
 - stdafx.h
 
-#### Main
+**_Main_**
 - The main function that initializes the Galileo Pins to talk SPI to the Music Shield and reads input from the keyboard in order to trigger the sounds and lights
-#### PianoLogic
+
+**_PianoLogic_**
 - Houses all of the logic for the piano system such as keyUp, keyDown, Lighting, Playing a sound, reading the XML files, etc.
-#### KeyboardLightController
+
+**_KeyboardLightController_**
 - Houses all of the functionality to trigger the lighting through the GPIO port expander
-#### spi_missing
+
+**_spi_missing_**
 - Creates a namespace that hosts the functions missing from spi.h such as begin, end, and transfer with options. 
-#### SpiMidi
+
+**_SpiMidi_**
 - Houses all of the MIDI commands through SPI in order to simplify calling code
-#### stdafx
+
+**_stdafx_**
 - Houses all of the external includes for the project
 
 ### Configuration Files
@@ -35,4 +40,4 @@
 - Song.xml
     - The song to be auto-played
     - Each note in the song is composed of the keyboard key to be "pressed" and the how long it should be pressed (duration)
-    - Since 'y' was not linked to a note, we used it here for a wait between notes
+    - Since the key 'y' was not linked to a note, we used it here for a wait between notes
