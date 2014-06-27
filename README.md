@@ -7,6 +7,19 @@
 - 16-Bit I/O Expander with Serial Interface [We used this one](http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en023500)
 - 16 LEDS
 
+### Hooking up Components
+![alt-text](pianoDiagram.png "Piano Diagram")
+
+1. Place the MP3 Player Shield on top of your galileo board with the pins lined up
+1. Place the I/O Expander onto a breadboard and hook up its 8 GPA pins and 8 GPB pins to the 16 LEDs with the other end of the LEDs hooked to ground.[Look Here for MCP23S17 Specs](http://ww1.microchip.com/downloads/en/DeviceDoc/21952b.pdf)
+1. Hook up A0, A1, and A2 on the I/O Expander to GROUND on your Galileo.
+1. Hook up RESET on the I/O Expander to 3.3V on your Galileo.
+1. Hook up Vdd on the I/O Expander to 3.3V on your Galileo.
+1. Hook up Vss on the I/O Expander to GROUND on your Galileo.
+1. Hook up NC on the I/O Expander to GP10 on your Galileo.
+1. Hook up SCL on the I/O Expander to GP13 on your Galileo.
+1. Hook up SDA on the I/O Expander to GP11 on your Galileo.
+
 ### How The Code is Broken Up
 - Main.cpp
 - KeyboardLightController.cpp and .h
@@ -41,15 +54,3 @@
     - The song to be auto-played
     - Each note in the song is composed of the keyboard key to be "pressed" and the how long it should be pressed (duration)
     - Since the key 'y' was not linked to a note, we used it here for a wait between notes
-    
-### Hooking up Components
-1. Place the MP3 Player Shield on top of your galileo board with the pins lined up
-1. Place the I/O Expander onto a breadboard and hook up its 8 GPA pins and 8 GPB pins to the 16 LEDs with the other end of the LEDs hooked to ground.[Look Here for MCP23S17 Specs](http://ww1.microchip.com/downloads/en/DeviceDoc/21952b.pdf)
-1. Hook up A0, A1, and A2 on the I/O Expander to GROUND on your Galileo.
-1. Hook up RESET on the I/O Expander to 3.3V on your Galileo.
-1. Hook up Vdd on the I/O Expander to 3.3V on your Galileo.
-1. Hook up Vss on the I/O Expander to GROUND on your Galileo.
-1. Hook up NC on the I/O Expander to GP10 on your Galileo.
-1. Hook up SCL on the I/O Expander to GP13 on your Galileo.
-1. Hook up SDA on the I/O Expander to GP11 on your Galileo.
-![alt-text](pianoDiagram.png "Piano Diagram")
