@@ -1,11 +1,27 @@
 #Piano on Galileo
 
+## Contents
+- [Components](#components)
+- [Hooking Up Components](#hooking-up-components)
+- [Let's Run It](#let's-run-it!)
+- [How The Code Is Broken Up](#how-the-code-is-broken-up)
+- [Configuration Files](#configuration-files)
+- [Tips](#tips)
+
+---
+
 ### Components
 - Intel Galileo Board
 - Windows Image on microSD card
 - [MP3 Player Shield](https://www.sparkfun.com/products/10628)
 - 16-Bit I/O Expander with Serial Interface [We used this one](http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en023500)
 - 16 LEDS
+
+##### Optional Components
+- Computer Keyboard
+- micro-USB Male to USB Female
+
+---
 
 ### Hooking up Components
 ![alt-text](pianoDiagram.png "Piano Diagram")
@@ -19,6 +35,31 @@
 1. Hook up NC on the I/O Expander to GP10 on your Galileo.
 1. Hook up SCL on the I/O Expander to GP13 on your Galileo.
 1. Hook up SDA on the I/O Expander to GP11 on your Galileo.
+
+### Hooking up Optional Components
+1. Plug the Computer Keyboard into the USB Female end of the converter.
+1. Plug the micro-USB Male end of the converter into your Galileo Host USB port
+
+---
+
+### Let's Run It!
+There are two ways to run the project
+
+1. Using Telnet and your development computer to trigger keystrokes.
+    * You can either remote deploy or move the Piano.exe directly onto your Galileo (either way make sure it's on your Galileo)
+    * When in a telnet session connected to your Galileo, launch the Piano.exe (built from the project)
+    * You should now see the light-up sequence if you have correctly connected everything
+    * Now you should be able to play sounds using your keyboard input through telnet.
+1. Using an external keyboard and running it without a computer connection
+    * Make sure your Galileo has finished booting up and you have connected a keyboard to your Galileo's USB Host Port
+    * You can either remote deploy or move the Piano.exe directly onto your Galileo (either way make sure it's on your Galileo)
+    * (The next steps require a bit of blind typing)
+    * Using the keyboard connected to the Galileo, type "cd c:\LocationToFile" and hit enter to go into the folder containing Piano.exe
+    * Using the keyboard connected to the Galileo, type "Piano.exe" and hit enter to launch the program
+    * You should now see the light-up sequence if you have correctly connected everything.
+    * Now you should be able to play sounds using your keyboard input through telnet.
+    
+---
 
 ### How The Code is Broken Up
 - Main.cpp
@@ -46,6 +87,8 @@
 **_stdafx_**
 - Houses all of the external includes for the project
 
+---
+
 ### Configuration Files
 - KeyMap.xml
     - Xml that contains the mapping for a keyboard key to a MIDI note and the Light position
@@ -54,3 +97,8 @@
     - The song to be auto-played
     - Each note in the song is composed of the keyboard key to be "pressed" and the how long it should be pressed (duration)
     - Since the key 'y' was not linked to a note, we used it here for a wait between notes
+
+---
+
+### Tips
+1. You can edit the KeyMap.xml file to map any MIDI sounds to the keys on your keyboard
