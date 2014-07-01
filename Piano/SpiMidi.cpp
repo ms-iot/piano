@@ -1,16 +1,7 @@
-/*++
+// Copyright(c) Microsoft Open Technologies, Inc.All rights reserved.Licensed under the BSD 2 - Clause License.See License.txt in the project root for license information.
+//
 
-Copyright (c) Microsoft Corporation.  All rights reserved.
-
-Module Name:
-
-SpiMidi.cpp
-
-Abstract:
-
-SPI client driver implementation functions
-
---*/
+// SPI client driver implementation functions
 
 #include "SpiMidi.h"
 
@@ -94,40 +85,6 @@ void MusicShieldInit(bool realTimeMidiMode)
     // bring VS1053 out of reset
     digitalWrite(VS1053_RESET, HIGH);      // reset is active low and is tied to ground through a pulldown
     // need to bring high to power up the chip
-}
-
-// Must be called directly after hardware reset
-// (can read registers before calling this, but no config changes)
-void VS1053SinWaveTest()
-{
-    unsigned int mode;
-
-    // enter test mode: set SM_TESTS in mode register
-    wprintf(L"Doing VS1053 sine wave test (1.125Khz)\n");
-    mode = VS1053_MODE_DEFAULT | (1 << VS1053_MODE_SM_TESTS);
-    SciWrite(VS1053_REGISTER::MODE, mode);
-
-    // read back mode
-    mode = SciRead(VS1053_REGISTER::MODE);
-    wprintf(L"mode is: 0x%x\n", mode);
-
-    // Send test command on SDI bus
-    //   Enter sine test:  0x53 0xEF 0x6E n 0 0 0 0 where n = (1 << 5) | 3 to yield 1.125Khz sine wave
-    wprintf(L"Sending sine test command on SDI\n");
-    unsigned char enterSineTestCmd [] = { 0x53, 0xEF, 0x6E, (1 << 5) | 3, 0, 0, 0, 0 };
-    SdiSend(enterSineTestCmd, sizeof(enterSineTestCmd));
-
-    // let it run for 10 seconds
-    Sleep(10000);
-
-    wprintf(L"Sending stop test command\n");
-    //   Exit sine test:: 0x45 0x78 0x69 0x74 0 0 0 0
-    unsigned char exitSineTestCmd [] = { 0x45, 0x78, 0x69, 0x74, 0, 0, 0, 0 };
-    SdiSend(exitSineTestCmd, sizeof(exitSineTestCmd));
-
-    wprintf(L"Exiting test mode\n");
-    // exit test mode
-    SciWrite(VS1053_REGISTER::MODE, VS1053_MODE_DEFAULT);
 }
 
 //Plays a MIDI note. Doesn't check to see that cmd is greater than 127, or that data values are less than 127

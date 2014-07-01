@@ -1,7 +1,7 @@
+// Copyright(c) Microsoft Open Technologies, Inc.All rights reserved.Licensed under the BSD 2 - Clause License.See License.txt in the project root for license information.
+//
 
 /*
-Copyright (c) Microsoft. All rights reserved.
-
 KeyboardLightController Static Library
 
 This library will control keyboard lighting
@@ -19,11 +19,6 @@ MCP23S17 - GPIO (general purpose input/output) port expander
 14 N-channel MOSFETs - One for each LED, triggering 12V/1A of current.
 LED Strip - RadioShack LED Waterproof Flexi Strip 60 LED 1M (White)
 12V/5A power supply
-
-Created 11 APR 2014
-By Zachary J. Fields
-Edited 18 JUN 2014
-By Anthony Ngu
 */
 
 #include "stdafx.h"

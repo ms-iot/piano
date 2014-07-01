@@ -1,16 +1,8 @@
-/*++
+// Copyright(c) Microsoft Open Technologies, Inc.All rights reserved.Licensed under the BSD 2 - Clause License.See License.txt in the project root for license information.
+//
 
-Copyright (c) Microsoft Corporation.  All rights reserved.
+// Hosts all of the piano specific logic
 
-Module Name:
-
-PianoLogic.cpp
-
-Abstract:
-
-Defines the entry point for the console application
-
---*/
 #include "PianoLogic.h"
 #include "SpiMidi.h"
 
@@ -28,9 +20,9 @@ struct KeyAttribs
 };
 
 std::map<WCHAR, KeyAttribs> KeyTable;	// The Table Containing Mappings for the keys
-byte note = 0;						// The MIDI note value to be played
-byte resetMIDI = 4;					// Tied to VS1053 Reset line
-byte ledPin = 13;					// MIDI traffic inidicator
+byte note = 0;						    // The MIDI note value to be played
+byte resetMIDI = 4;					    // Tied to VS1053 Reset line
+byte ledPin = 13;					    // MIDI traffic inidicator
 int  instrument = 0;
 
 struct Note
@@ -243,6 +235,7 @@ CleanUp:
     return hr;
 }
 
+// Reads the XML attributes of the song file, parses them, and stores them in a queue for playback.
 HRESULT ReadSongAttributes(IXmlReader* pReader)
 {
     const WCHAR* pwszPrefix;		// storing the prefix
@@ -309,6 +302,7 @@ HRESULT ReadSongAttributes(IXmlReader* pReader)
     return hr;
 }
 
+// Processes the song XML file
 HRESULT ProcessSongXml(LPCWSTR file)
 {
     HRESULT hr = S_OK;
@@ -442,7 +436,7 @@ void StopSound(WCHAR key)
     }
 }
 
-// When the folder is changed
+// When the containing folder is changed, it should clear the table and re-process the KeyMap
 VOID CALLBACK FolderChanged(PVOID lpParameter, BOOLEAN TimerOrWaitFired)
 {
     OutputDebugString(L"KeyMap was changed\n");
@@ -493,13 +487,13 @@ void KeyUp(WCHAR key)
     }
 }
 
-// clears the stored keymappings
+// Clears the stored keymappings
 void ClearKeyTable()
 {
     KeyTable.clear();
 }
 
-// the general intialize function
+// Initializes the key mapping, folder monitoring, and keyboard lights
 HRESULT Initialize()
 {
     HRESULT hr = S_OK;
