@@ -1,4 +1,7 @@
-// Main.cpp : Defines the entry point for the console application.
+// Copyright(c) Microsoft Open Technologies, Inc.All rights reserved.Licensed under the BSD 2 - Clause License.See License.txt in the project root for license information.
+//
+
+// Main.cpp : Defines the entry point for the console application, sets up the piano environment, and continually checks for keyboard input.
 
 #include "PianoLogic.h"
 #include "SpiMidi.h"
