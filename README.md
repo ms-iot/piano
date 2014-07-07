@@ -16,6 +16,7 @@
 - [MP3 Player Shield](https://www.sparkfun.com/products/10628)
 - 16-Bit I/O Expander with Serial Interface [We used this one](http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en023500)
 - 16 LEDS
+- Speakers that take input through 3.5mm Audio Jack
 
 ##### Optional Components
 - Computer Keyboard
@@ -35,6 +36,7 @@
 1. Hook up NC on the I/O Expander to GP10 on your Galileo.
 1. Hook up SCL on the I/O Expander to GP13 on your Galileo.
 1. Hook up SDA on the I/O Expander to GP11 on your Galileo.
+1. Plug the speakers into the MP3 Player Shield's 3.5mm Audio port and turn your speakers on
 
 ### Hooking up Optional Components
 1. Plug the Computer Keyboard into the USB Female end of the converter.
