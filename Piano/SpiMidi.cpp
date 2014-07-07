@@ -1,5 +1,6 @@
-// Copyright(c) Microsoft Open Technologies, Inc.All rights reserved.Licensed under the BSD 2 - Clause License.See License.txt in the project root for license information.
-//
+// Copyright(c) Microsoft Open Technologies, Inc. All rights reserved.
+// Licensed under the BSD 2 - Clause License.
+// See License.txt in the project root for license information.
 
 // SPI client driver implementation functions
 
@@ -98,7 +99,6 @@ void talkMIDI(BYTE cmd, BYTE data1, BYTE data2)
 void talkMIDI(BYTE cmd, BYTE data1)
 {
     unsigned char buf [] = { 0x00, cmd, 0x00, data1 };
-    wprintf(L"size of buffer sent: %d\n",sizeof(buf));
     SdiSend(buf, sizeof(buf));
 }
 
