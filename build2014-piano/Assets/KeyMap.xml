@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mappings>
+  <!-- C0=0 , C1=12, C2=24, C3=36 ... C10=120 -->
+  <Note Key="i" Channel="0" Note="53" Velocity="96" /> <!--F4-->
+  <Note Key="f" Channel="0" Note="55" Velocity="96" /> <!--G4-->
+  <Note Key="k" Channel="0" Note="57" Velocity="96" /> <!--A4-->
+  <Note Key="v" Channel="0" Note="59" Velocity="96" /> <!--B4-->
+  <Note Key="¼" Channel="0" Note="60" Velocity="96" /> <!--C5-->
+  <Note Key="4" Channel="0" Note="62" Velocity="96" /> <!--D5-->
+  <Note Key="8" Channel="0" Note="64" Velocity="96" /> <!--E5-->
+  <Note Key="b" Channel="0" Note="65" Velocity="96" /> <!--F5-->
+  <Note Key="5" Channel="0" Note="67" Velocity="96" /> <!--G5-->
+  <Note Key="»" Channel="0" Note="69" Velocity="96" /> <!--A5-->
+  <Note Key="g" Channel="0" Note="71" Velocity="96" /> <!--B5-->
+  <Note Key="t" Channel="0" Note="72" Velocity="96" /> <!--C6-->
+  <Note Key="ý" Channel="0" Note="74" Velocity="96" /> <!--D6-->
+  <Note Key="r" Channel="0" Note="76" Velocity="96" /> <!--E6-->
+</Mappings>
